@@ -1,10 +1,9 @@
 package rool.spring.springlearning.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -15,6 +14,10 @@ public class User {
 
     private String name;
     private String location;
+
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "offer_id")
+    private Set<Offer> offers = new HashSet<>();
 
     public User() {
     }
@@ -48,16 +51,27 @@ public class User {
         this.location = location;
     }
 
+    public Set<Offer> getOffers() {
+        return offers;
+    }
+
+    public void setOffers(Set<Offer> offers) {
+        this.offers = offers;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         User user = (User) o;
-        return id.equals(user.id);
+
+        return id != null ? id.equals(user.id) : user.id == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return id != null ? id.hashCode() : 0;
     }
 }

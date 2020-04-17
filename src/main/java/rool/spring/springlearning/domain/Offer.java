@@ -1,9 +1,7 @@
 package rool.spring.springlearning.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.jws.soap.SOAPBinding;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +14,10 @@ public class Offer {
     private String title;
     private String description;
     private int offerType;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Offer() {
 
@@ -59,17 +61,38 @@ public class Offer {
         this.offerType = offerType;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Offer{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", offerType=" + offerType +
+                ", user=" + user +
+                '}';
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Offer offer = (Offer) o;
-        return id.equals(offer.id);
+
+        return id != null ? id.equals(offer.id) : offer.id == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return id != null ? id.hashCode() : 0;
     }
 }
 
