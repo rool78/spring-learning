@@ -1,7 +1,7 @@
 # Spring 5 Learning project
 Learning about Spring 5 Framework
 
-Work on progress...
+Work in process...
 
 
 Stack
