@@ -7,6 +7,9 @@ import rool.spring.springlearning.domain.User;
 import rool.spring.springlearning.repositories.OfferRepository;
 import rool.spring.springlearning.repositories.UserRepository;
 
+/**
+ * Command Line Runner is an interface. It is used to execute the code after the Spring Boot application started.
+ */
 @Component
 public class BootStrapData implements CommandLineRunner {
 
@@ -23,18 +26,20 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println("Starting Bootstrap");
 
-        User u1 = new User("User1" , "Ferrol");
-        User u2 =  new User("User2", "Coruña");
+        User u1 = new User("John Smith" , "USA");
+        User u2 =  new User("Daniella Sophani", "London");
 
-        Offer o1 = new Offer("Mi oferta", "Probando", 1);
-        Offer o2 = new Offer("Mi oferta2", "Probando2", 1);
-        Offer o3 = new Offer("Mi oferta3", "Probando3", 1);
+        Offer o1 = new Offer("Car on sale", "I'm looking for someone to buy my car");
+        Offer o2 = new Offer("Half price", "Half price cinema tickets");
+        Offer o3 = new Offer("Discount", "Supermarket discount");
 
         u1.getOffers().add(o1);
+
         o1.setUser(u1);
 
         u2.getOffers().add(o2);
         u2.getOffers().add(o3);
+
         o2.setUser(u2);
         o3.setUser(u2);
 

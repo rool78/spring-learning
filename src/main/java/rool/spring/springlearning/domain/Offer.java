@@ -13,7 +13,6 @@ public class Offer {
 
     private String title;
     private String description;
-    private int offerType;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -23,10 +22,9 @@ public class Offer {
 
     }
 
-    public Offer(String title, String description, int offerType) {
+    public Offer(String title, String description) {
         this.title = title;
         this.description = description;
-        this.offerType = offerType;
     }
 
     public Long getId() {
@@ -53,14 +51,6 @@ public class Offer {
         this.description = description;
     }
 
-    public int getOfferType() {
-        return offerType;
-    }
-
-    public void setOfferType(int offerType) {
-        this.offerType = offerType;
-    }
-
     public User getUser() {
         return user;
     }
@@ -75,7 +65,7 @@ public class Offer {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", offerType=" + offerType +
+                ", offerType=" +
                 ", user=" + user +
                 '}';
     }
