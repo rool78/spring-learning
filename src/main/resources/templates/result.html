@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>User result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Good! You added a new user:</h2>
+<p th:text="'Name: ' + ${user.name}" />
+<p th:text="'Location: ' + ${user.location}" /><br>
+
+<a th:href="@{userForm}">Submit another user</a><br><br>
+<a th:href="@{list}">View list of users</a>
+</body>
+</html>

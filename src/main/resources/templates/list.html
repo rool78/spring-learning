@@ -26,16 +26,16 @@
 
 <table style="width:100%">
     <tr>
-        <th>Title</th>
         <th>Name</th>
-        <th>Decription</th>
+        <th>Location</th>
     </tr>
-    <tr th:each="offer : ${offers}">
-        <td th:text="${offer.title}">Data</td>
-        <td th:text="${offer.user.name}">Data</td>
-        <td th:text="${offer.description}">Data</td>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}">Name</td>
+        <td th:text="${user.location}">Location</td>
     </tr>
 </table>
+<br><br>
+<a th:href="@{userForm}">Add new user</a>
 
 </body>
 </html>
