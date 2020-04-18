@@ -3,4 +3,4 @@
 - Added a form to the Spring-learning project
 - Removed Offer business at the moment to make it clear
 # Deployment
-Project made with Intellij, you can launch it very easy with Intellij, lauch SpringLearningApplication class and go to http://localhost:8080/ in your browser. If you are using Eclipse you will have to do a maven tomcat run.
+Project made with Intellij, you can launch it very easy with Intellij, launch SpringLearningApplication class and go to http://localhost:8080/ in your browser. If you are using Eclipse you will have to do a maven tomcat run.
