@@ -1,0 +1,78 @@
+h1{
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+
+h2{
+    text-transform: uppercase;
+    color: #4CAF50;
+}
+
+p{
+    font-family: Arial;
+}
+
+a:link, a:visited {
+    text-transform: uppercase;
+    background-color: green;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    width: 200px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: darkgreen;
+}
+
+input[type=text], select {
+
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    width: 30%;
+    background-color: #010e03;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
