@@ -15,10 +15,6 @@ public class User {
     private String name;
     private String location;
 
-    @OneToMany(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "offer_id")
-    private Set<Offer> offers = new HashSet<>();
-
     public User() {
     }
 
@@ -50,15 +46,6 @@ public class User {
     public void setLocation(String location) {
         this.location = location;
     }
-
-    public Set<Offer> getOffers() {
-        return offers;
-    }
-
-    public void setOffers(Set<Offer> offers) {
-        this.offers = offers;
-    }
-
 
     @Override
     public boolean equals(Object o) {
